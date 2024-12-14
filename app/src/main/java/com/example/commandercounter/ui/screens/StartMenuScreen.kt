@@ -10,14 +10,14 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.commandercounter.ui.components.MainMenuButtonRow
+import com.example.commandercounter.ui.components.PlayButton
 import com.example.commandercounter.ui.theme.LightGreen
 import com.example.commandercounter.viewmodels.GameViewModel
 
 @Composable
-fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel = viewModel()) {
+fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel) {
 
     val gameModel = gameViewModel.game.collectAsState().value
 
@@ -45,7 +45,8 @@ fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel =
 
             Text(
                 text = "STARTING LIFE",
-                color = LightGreen
+                color = LightGreen,
+                modifier = Modifier.padding(top = 25.dp)
             )
 
             MainMenuButtonRow(
@@ -54,6 +55,11 @@ fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel =
                 stepSize = 10,
                 isSelected = { startLife -> gameModel.playetStartLife == startLife },
                 onClick = { startLife -> gameViewModel.setPlayerStartLife(startLife) }
+            )
+
+            PlayButton(
+                navController = navController,
+                modifier = Modifier.padding(top = 20.dp)
             )
 
         }
