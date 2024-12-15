@@ -2,6 +2,7 @@ package com.example.commandercounter.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.example.commandercounter.data.models.Game
+import com.example.commandercounter.data.models.Player
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -19,5 +20,9 @@ class GameViewModel : ViewModel() {
 
     fun setPlayerStartLife(count: Int) {
         _game.value = _game.value.copy(playetStartLife = count)
+    }
+
+    fun appendPlayer(player: Player) {
+        _game.value = _game.value.copy(playerList = _game.value.playerList + player)
     }
 }
