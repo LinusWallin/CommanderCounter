@@ -3,7 +3,6 @@ package com.example.commandercounter.ui.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,7 +31,7 @@ fun CounterButton(
     Box(
         modifier = modifier
             .fillMaxSize()
-            .padding(8.dp)
+            .padding(4.dp)
             .rotate(rotation),
         contentAlignment = Alignment.Center
     ) {
