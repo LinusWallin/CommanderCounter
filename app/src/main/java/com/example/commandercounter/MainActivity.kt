@@ -1,6 +1,8 @@
 package com.example.commandercounter
 
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,6 +17,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        hideSystemBars()
 
         val gameViewModel: GameViewModel by viewModels()
 
@@ -26,4 +29,12 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+    private fun hideSystemBars() {
+        window.insetsController?.apply {
+            systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            hide(WindowInsets.Type.systemBars())
+        }
+    }
+
 }
