@@ -12,7 +12,10 @@ class GameViewModel : ViewModel() {
         playetStartLife = 40,
         playerList = emptyList()
     ))
+    private val _menu = MutableStateFlow(false)
+
     val game: StateFlow<Game> = _game
+    val menu: StateFlow<Boolean> = _menu
 
     fun setPlayerCount(count: Int) {
         _game.value = _game.value.copy(playerCount = count)
@@ -24,5 +27,9 @@ class GameViewModel : ViewModel() {
 
     fun appendPlayer(player: Player) {
         _game.value = _game.value.copy(playerList = _game.value.playerList + player)
+    }
+
+    fun toggleMenu() {
+        _menu.value = !_menu.value
     }
 }
