@@ -1,5 +1,6 @@
 package com.example.commandercounter.ui.screens
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,6 +15,7 @@ import com.example.commandercounter.data.models.Player
 import com.example.commandercounter.ui.components.CounterButton
 import com.example.commandercounter.ui.components.GameMenu
 import com.example.commandercounter.ui.components.OpenMenuButton
+import com.example.commandercounter.ui.components.Planechase
 import com.example.commandercounter.ui.theme.DarkGrey
 import com.example.commandercounter.ui.theme.Green
 import com.example.commandercounter.viewmodels.GameViewModel
@@ -23,6 +25,7 @@ fun GameScreen(navController: NavController, gameViewModel: GameViewModel) {
 
     val gameModel = gameViewModel.game.collectAsState().value
     val gameMenu = gameViewModel.menu.collectAsState().value
+    val planeChase = gameViewModel.planeChase.collectAsState().value
 
     for (playerName in 1..gameModel.playerCount) {
         gameViewModel.appendPlayer(Player(
@@ -99,6 +102,9 @@ fun GameScreen(navController: NavController, gameViewModel: GameViewModel) {
             }
         }else {
             GameMenu(navController, gameViewModel)
+        }
+        if (planeChase) {
+            Planechase(gameViewModel)
         }
     }
 

@@ -1,20 +1,29 @@
 package com.example.commandercounter.viewmodels
 
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import com.example.commandercounter.data.models.Game
+import com.example.commandercounter.data.models.Planes
 import com.example.commandercounter.data.models.Player
+import com.example.commandercounter.utils.readPlanes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class GameViewModel : ViewModel() {
+class GameViewModel(application: Application) : AndroidViewModel(application) {
     private val _game = MutableStateFlow(Game(
         playerCount = 2,
         playetStartLife = 40,
         playerList = emptyList()
     ))
+    private val _planes = MutableStateFlow(Planes(
+        readPlanes(getApplication())
+    ))
+    private val _planeChase = MutableStateFlow(false)
     private val _menu = MutableStateFlow(false)
 
     val game: StateFlow<Game> = _game
+    val planes: StateFlow<Planes> = _planes
+    val planeChase: StateFlow<Boolean> = _planeChase
     val menu: StateFlow<Boolean> = _menu
 
     fun setPlayerCount(count: Int) {
@@ -31,5 +40,13 @@ class GameViewModel : ViewModel() {
 
     fun toggleMenu() {
         _menu.value = !_menu.value
+    }
+
+    fun togglePlaneChase() {
+        _planeChase.value = !_planeChase.value
+    }
+
+    fun nextPlane() {
+        _planes.value.changePlane()
     }
 }

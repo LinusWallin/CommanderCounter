@@ -25,19 +25,22 @@ fun GameMenu(navController: NavController, gameViewModel: GameViewModel) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .pointerInput(Unit){},
+            .pointerInput(Unit) {},
         contentAlignment = Alignment.Center
     ) {
         Box(
             modifier = Modifier
-                .size(width = 180.dp, height = 60.dp)
+                .size(width = 220.dp, height = 60.dp)
                 .background(LightGrey, RoundedCornerShape(8.dp))
-                .pointerInput(Unit){},
+                .pointerInput(Unit) {},
             contentAlignment = Alignment.Center
         ) {
             Row {
                 ResetButton(gameViewModel)
-                CloseMenuButton(gameViewModel)
+                CloseMenuButton(
+                    onClickAction = { gameViewModel.toggleMenu() }
+                )
+                PlaneMenuButton(gameViewModel)
                 HomeButton(navController)
             }
         }

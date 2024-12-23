@@ -1,0 +1,170 @@
+[
+  {
+    "place": "The Caldaia",
+    "plane": "Capenna",
+    "effect": "Creature spells you cast from your hand have blitz 3.",
+    "chaos": "return target creature card from your graveyard to your hand."
+  },
+  {
+    "place": "Enigma Ridges",
+    "plane": "Echoir",
+    "effect": "When you planeswalk to Enigma Ridges, each player who controls fewer lands than the player who controls the most lands searches their library for a number of basic land cards less than or equal to the difference, reveals them, puts them into their hand, then shuffles.",
+    "chaos": "draw a card, then you may put a land card from your hand onto the battlefield."
+  },
+  {
+    "place": "Esper",
+    "plane": "Alara",
+    "effect": "Artifact spells cost 1 less to cast.",
+    "chaos": "creatures you control that are white, blue and/or black become artifacts in addition to their types until end of turn. Then each artifact creature you control gains vigilance, menace, and lifelink until end of turn."
+  },
+  {
+    "place": "The Fertile Lands of Saulvinia",
+    "plane": "Antausia",
+    "effect": "Whenever a player taps a land for mana, that player adds one mana of any type that land produced.",
+    "chaos": "reveal cards from the top of your planar deck until you reveal a plane card. Chaos ensues on that plane. Then put all cards revealed this way on the bottom of your planar deck in any order."
+  },
+  {
+    "place": "Ghirapur",
+    "plane": "Kaladesh",
+    "effect": "At the beginning of combat on your turn, until end of turn, each noncreature, non-Vehicle artifact you control becomes a 5/3 Vehicle in addition to its other types and gains trample, haste, and crew 2.",
+    "chaos": "return target noncreature artifact card from your graveyard to your hand."
+  },
+  {
+    "place": "The Golden City of Orazca",
+    "plane": "Ixalan",
+    "effect": "Whenever one or more creatures you control deal combat damage to a player, create a Treasure token. Then draw a card if you have the city's blessing.",
+    "chaos": "you may put a permanent card from your hand onto the battlefield tapped."
+  },
+  {
+    "place": "The Great Aerie",
+    "plane": "Tarkir",
+    "effect": "When you planeswalk to The Great Aerie and at the beginning of your upkeep, bolster 3.",
+    "chaos": "choose up to one target creature you control and up to one target creature an opponent controls. Each of those creatures deals damage equal to its toughness to each other."
+  },
+  {
+    "place": "Inys Haen",
+    "plane": "Cridhe",
+    "effect": "When you planeswalk to Inys Haen and at the beginning of your upkeep, mill three cards. When you planeswalk away from Inys Haen, each player returns all land cards from their graveyard to the battlefield tapped.",
+    "chaos": "return target nonland card from you graveyard to your hand."
+  },
+  {
+    "place": "Ketria",
+    "plane": "Ikoria",
+    "effect": "When you planeswalk to Ketria and at the beginning of your upkeep, put your choice of a vigilance, menace, or trample counter on target creature you control.",
+    "chaos": "exile cards from the top of your library until you exile a nonland permanent card. Put that card onto the battlefield or into your hand."
+  },
+  {
+    "place": "Littjara",
+    "plane": "Kaldheim",
+    "effect": "When you planeswalk to Ketria and at the beginning of your upkeep, create a 2/2 shapeshifter creature token with changeling.",
+    "chaos": "choose a creature type. Put a +1/+1 counter on each creature you control of that type."
+  },
+  {
+    "place": "Megaflora Jungle",
+    "plane": "Gargantikar",
+    "effect": "Each creature with mana value 2 or less gets +2/+2.",
+    "chaos": "create a 1/1 green Insect creature token with flying named Butterfly."
+  },
+  {
+    "place": "Naktamun",
+    "plane": "Amonkhet",
+    "effect": "Each creature card in your graveyard has embalm. Its embalm cost is equal to its mana cost.",
+    "chaos": "you may discard a card. If you do, draw a card."
+  },
+  {
+    "place": "New Argive",
+    "plane": "Dominaria",
+    "effect": "Whenever a historic creature you control attacks, it gets +2/+2 until end of turn.",
+    "chaos": "reveal cards from the top of your library until you reveal a historic card. Put that card into your hand and the rest on the bottom of your library in a random order."
+  },
+  {
+    "place": "Norn's Seedcore",
+    "plane": "New Phyrexia",
+    "effect": "When you planeswalk to Norn’s Seedcore, chaos ensues.",
+    "chaos": "Whenever chaos ensues, reveal cards from the top of your planar deck until you reveal a plane card. Planeswalk to it, except don’t planeswalk away from any plane. Put the rest of the revealed cards on the bottom of your planar deck in any order."
+  },
+  {
+    "place": "Nyx",
+    "plane": "Theros",
+    "effect": "Nontoken creatures are enchantments in addition to their other types. Whenever an enchantment enters the battlefield under your control, you gain 1 life.",
+    "chaos": "choose a color. Add an amount of mana of that color equal to your devotion to that color."
+  },
+  {
+    "place": "Paliano",
+    "plane": "Fiora",
+    "effect": "When one or more creatures you control deal combat damage to a player, if there is no monarch, you become the monarch.",
+    "chaos": "create a 1/1 black Assassin creature token with deathtouch and haste."
+  },
+  {
+    "place": "The Pit",
+    "plane": "The Abyss",
+    "effect": "When you planeswalk to The Pit, each player creates their choice of a 3/3 Angel creature token with flying or a 6/6 black Demon creature token with flying, trample, and 'At the beginning of your upkeep, sacrifice another creature. If you can't, this creature deals 6 damage to you.'",
+    "chaos": "each player sacrifices a nonartifact creature."
+  },
+  {
+    "place": "Riptide Island",
+    "plane": "Dominaria",
+    "effect": "When you planeswalk to Riptide Island and at the beginning of your upkeep, create two 1/1 colorless Sliver creature tokens.",
+    "chaos": "Slivers you control gain haste and get +X/+X until end of turn, where X is the number of Slivers you control."
+  },
+  {
+    "place": "Strixhaven",
+    "plane": "Arcavios",
+    "effect": "Instant and sorcery spells players cast have demonstrate.",
+    "chaos": "return up to one target instant or sorcery card from a graveyard to its owner's hand."
+  },
+  {
+    "place": "The Wizards Mountain",
+    "plane": "Shenmeng",
+    "effect": "Whenever you roll the planar die, put a +1/+1 counter on up to one target creature.",
+    "chaos": "creatures you control gain flying until end of turn."
+  },
+  {
+    "place": "Towashi",
+    "plane": "Kamigawa",
+    "effect": "Modified creatures you control have trample and 'Whenever this creature deals combat damage to a player or planeswalker, draw a card.'",
+    "chaos": "distribute three +1/+1 counters among one, two, or three target creatures you control."
+  },
+  {
+    "place": "Unyaro",
+    "plane": "Zhalfir",
+    "effect": "At the beginning of your end step, if you planeswalked to Unyaro this turn, untap all creatures. They phase out until a player planeswalks.",
+    "chaos": "create two 2/2 white and blue Knight creature tokens with vigilance."
+  },
+  {
+    "place": "The Western Cloud",
+    "plane": "Gobakhan",
+    "effect": "Prevent all damage that would be dealt to creatures and planeswalkers you control.",
+    "chaos": "create three tapped Treasure tokens. They each deal 1 damage to each creature and each planeswalker."
+  },
+  {
+    "place": "The Wilds",
+    "plane": "Eldrain",
+    "effect": "When you planeswalk to The Wilds and at the beginning of your upkeep, create a food token.",
+    "chaos": "target player sacrifices a creature. If they do, you create a Food token. You create two Food tokens instead if the sacrificed creature's toughness was 4 or greater."
+  },
+  {
+    "place": "Bloodhill Bastion",
+    "plane": "Equilor",
+    "effect": "Whenever a creature enters, it gains double strike and haste until end of turn.",
+    "chaos": "exile target nontoken creature you control, then return it to the battlefield under your control."
+  },
+  {
+    "place": "Chaotic Aether",
+    "plane": "Phenomenon",
+    "effect": "When you encounter Chaotic Aether, each blank roll of the planar die is a Chaos roll until a player planeswalks away from a plane.",
+    "chaos": "None"
+  },
+  {
+    "place": "Gavony",
+    "plane": "Innistrad",
+    "effect": "All creatures have vigilance.",
+    "chaos": "creatures you control gain indestructible until end of turn."
+  },
+  {
+    "place": "Glimmervoid Basin",
+    "plane": "Mirrodin",
+    "effect": "Whenever a player casts an instant or sorcery spell with a single target, that player copies that spell for each other spell, permanent, card not on the battlefield, and/or player the spell could target. Each copy targets a different one of them.",
+    "chaos": "choose target creature. Each player except that creature’s controller creates a token that’s a copy of that creature."
+  }
+]
