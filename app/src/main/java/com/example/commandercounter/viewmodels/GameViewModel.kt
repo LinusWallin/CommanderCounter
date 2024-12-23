@@ -18,7 +18,7 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     private val _planes = MutableStateFlow(Planes(
         readPlanes(getApplication())
     ))
-    private val _planeChase = MutableStateFlow(true)
+    private val _planeChase = MutableStateFlow(false)
     private val _menu = MutableStateFlow(false)
 
     val game: StateFlow<Game> = _game
@@ -44,5 +44,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun togglePlaneChase() {
         _planeChase.value = !_planeChase.value
+    }
+
+    fun nextPlane() {
+        _planes.value.changePlane()
     }
 }

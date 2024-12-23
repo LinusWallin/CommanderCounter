@@ -13,6 +13,7 @@ class Planes(
 
     fun changePlane() {
         currentPlane = planesDeck.removeAt(0)
+        planesDeck.add(currentPlane)
     }
 
     fun reshuffle() {
