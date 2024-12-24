@@ -8,11 +8,12 @@ import com.example.commandercounter.data.models.Player
 import com.example.commandercounter.utils.readPlanes
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.update
 
 class GameViewModel(application: Application) : AndroidViewModel(application) {
     private val _game = MutableStateFlow(Game(
         playerCount = 2,
-        playetStartLife = 40,
+        playerStartLife = 40,
         playerList = emptyList()
     ))
     private val _planes = MutableStateFlow(Planes(
@@ -31,11 +32,37 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun setPlayerStartLife(count: Int) {
-        _game.value = _game.value.copy(playetStartLife = count)
+        _game.value = _game.value.copy(playerStartLife = count)
+    }
+
+    fun startGame(
+        playerCount: Int,
+        playerStartLife: Int
+    ) {
+        _game.update {
+            currentGame ->
+            val newPlayers = (1..playerCount).map { playerName ->
+                Player(playerName, playerStartLife)
+            }
+            currentGame.copy(
+                playerCount = playerCount,
+                playerStartLife = playerStartLife,
+                playerList = newPlayers
+            )
+        }
     }
 
     fun appendPlayer(player: Player) {
         _game.value = _game.value.copy(playerList = _game.value.playerList + player)
+    }
+
+    fun removePlayer(playerIdx: Int) {
+        val updatedPlayerList = _game.value.playerList.toMutableList().apply {
+            if (playerIdx in indices) {
+                removeAt(playerIdx)
+            }
+        }
+        _game.value = _game.value.copy(playerList = updatedPlayerList)
     }
 
     fun toggleMenu() {
