@@ -53,12 +53,13 @@ fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel) 
                 start = 10,
                 end = 40,
                 stepSize = 10,
-                isSelected = { startLife -> gameModel.playetStartLife == startLife },
+                isSelected = { startLife -> gameModel.playerStartLife == startLife },
                 onClick = { startLife -> gameViewModel.setPlayerStartLife(startLife) }
             )
 
             PlayButton(
                 navController = navController,
+                gameViewModel = gameViewModel,
                 modifier = Modifier.padding(top = 20.dp)
             )
 

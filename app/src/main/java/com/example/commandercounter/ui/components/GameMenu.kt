@@ -7,20 +7,16 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import com.example.commandercounter.ui.theme.DarkGrey
 import com.example.commandercounter.ui.theme.LightGrey
 import com.example.commandercounter.viewmodels.GameViewModel
 
 @Composable
 fun GameMenu(navController: NavController, gameViewModel: GameViewModel) {
-
-    val gameMenu = gameViewModel.menu.collectAsState().value
 
     Box(
         modifier = Modifier

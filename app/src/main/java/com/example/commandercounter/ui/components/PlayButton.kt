@@ -8,19 +8,31 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.commandercounter.ui.theme.DarkGrey
 import com.example.commandercounter.ui.theme.Green
+import com.example.commandercounter.viewmodels.GameViewModel
 
 @Composable
 fun PlayButton(
     navController: NavController,
+    gameViewModel: GameViewModel,
     modifier: Modifier
 ) {
+
+    val gameModel = gameViewModel.game.collectAsState().value
+
     Button(
-        onClick = { navController.navigate("game_screen") },
+        onClick = {
+            gameViewModel.startGame(
+                gameModel.playerCount,
+                gameModel.playerStartLife
+            )
+            navController.navigate("game_screen")
+        },
         modifier = modifier
             .padding(8.dp)
             .width(90.dp)
