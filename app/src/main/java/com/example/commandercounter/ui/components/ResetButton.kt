@@ -20,7 +20,7 @@ fun ResetButton(gameViewModel: GameViewModel) {
     IconButton(
         onClick = {
             for (player in gameModel.playerList) {
-                player.lifeTotal = gameModel.playetStartLife
+                player.lifeTotal = gameModel.playerStartLife
             }
             gameViewModel.toggleMenu()
         }

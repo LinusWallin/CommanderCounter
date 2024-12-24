@@ -1,6 +1,5 @@
 package com.example.commandercounter.ui.screens
 
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -30,7 +29,7 @@ fun GameScreen(navController: NavController, gameViewModel: GameViewModel) {
     for (playerName in 1..gameModel.playerCount) {
         gameViewModel.appendPlayer(Player(
             playerName,
-            gameModel.playetStartLife,
+            gameModel.playerStartLife,
         ))
     }
 
