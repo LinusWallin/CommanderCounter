@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -54,7 +53,7 @@ fun CounterButton(
                 .background(btnColor, RoundedCornerShape(24.dp))
                 .pointerInput(Unit) {
                     detectTapGestures(
-                        onPress = { offset ->
+                        onPress = {
                             isPressed = true
                             try {
                                 awaitRelease()
