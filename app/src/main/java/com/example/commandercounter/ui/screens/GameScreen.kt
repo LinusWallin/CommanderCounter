@@ -17,6 +17,7 @@ import com.example.commandercounter.ui.components.OpenMenuButton
 import com.example.commandercounter.ui.components.Planechase
 import com.example.commandercounter.ui.theme.DarkGrey
 import com.example.commandercounter.ui.theme.Green
+import com.example.commandercounter.utils.keepScreenAwake
 import com.example.commandercounter.viewmodels.GameViewModel
 
 @Composable
@@ -25,6 +26,11 @@ fun GameScreen(navController: NavController, gameViewModel: GameViewModel) {
     val gameModel = gameViewModel.game.collectAsState().value
     val gameMenu = gameViewModel.menu.collectAsState().value
     val planeChase = gameViewModel.planeChase.collectAsState().value
+    val screenAwake = gameViewModel.screenAwake.collectAsState().value
+
+    if (screenAwake){
+        keepScreenAwake()
+    }
 
     for (playerName in 1..gameModel.playerCount) {
         gameViewModel.appendPlayer(Player(
