@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.commandercounter.ui.components.MainMenuButtonRow
 import com.example.commandercounter.ui.components.PlayButton
+import com.example.commandercounter.ui.components.ScreenAwakeButton
 import com.example.commandercounter.ui.theme.LightGreen
 import com.example.commandercounter.viewmodels.GameViewModel
 
@@ -56,6 +57,8 @@ fun StartMenuScreen(navController: NavController, gameViewModel: GameViewModel) 
                 isSelected = { startLife -> gameModel.playerStartLife == startLife },
                 onClick = { startLife -> gameViewModel.setPlayerStartLife(startLife) }
             )
+
+            ScreenAwakeButton(gameViewModel)
 
             PlayButton(
                 navController = navController,

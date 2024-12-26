@@ -21,11 +21,13 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
     ))
     private val _planeChase = MutableStateFlow(false)
     private val _menu = MutableStateFlow(false)
+    private val _screenAwake = MutableStateFlow(false)
 
     val game: StateFlow<Game> = _game
     val planes: StateFlow<Planes> = _planes
     val planeChase: StateFlow<Boolean> = _planeChase
     val menu: StateFlow<Boolean> = _menu
+    val screenAwake: StateFlow<Boolean> = _screenAwake
 
     fun setPlayerCount(count: Int) {
         _game.value = _game.value.copy(playerCount = count)
@@ -75,5 +77,9 @@ class GameViewModel(application: Application) : AndroidViewModel(application) {
 
     fun nextPlane() {
         _planes.value.changePlane()
+    }
+
+    fun toggleScreenAwake() {
+        _screenAwake.value = !_screenAwake.value
     }
 }
