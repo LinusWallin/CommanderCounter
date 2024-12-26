@@ -10,6 +10,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.setValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.rotate
@@ -19,6 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.commandercounter.data.models.Player
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 @Composable
 fun CounterButton(
@@ -35,19 +43,46 @@ fun CounterButton(
             .rotate(rotation),
         contentAlignment = Alignment.Center
     ) {
+
+        val scope = rememberCoroutineScope()
+        var isPressed by remember { mutableStateOf(false) }
+
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .height(200.dp)
                 .background(btnColor, RoundedCornerShape(24.dp))
                 .pointerInput(Unit) {
-                    detectTapGestures { offset ->
-                        if (offset.x < size.width / 2) {
-                            player.decreasePlayerLife(1)
-                        } else {
-                            player.increasePlayerLife(1)
+                    detectTapGestures(
+                        onPress = { offset ->
+                            isPressed = true
+                            try {
+                                awaitRelease()
+                            } finally {
+                                isPressed = false
+                            }
+                        },
+                        onTap = { offset ->
+                            if (offset.x < size.width / 2) {
+                                player.decreasePlayerLife(1)
+                            } else {
+                                player.increasePlayerLife(1)
+                            }
+                        },
+                        onLongPress = { offset ->
+                            scope.launch {
+                                while (isPressed) {
+                                    if (offset.x < size.width / 2) {
+                                        player.decreasePlayerLife(10)
+                                    } else {
+                                        player.increasePlayerLife(10)
+                                    }
+                                    delay(1000)
+                                }
+
+                            }
                         }
-                    }
+                    )
                 },
             contentAlignment = Alignment.Center
         ) {
