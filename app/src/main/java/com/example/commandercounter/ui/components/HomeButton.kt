@@ -10,12 +10,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.commandercounter.ui.theme.Green
+import com.example.commandercounter.viewmodels.GameViewModel
 
 @Composable
-fun HomeButton(navController: NavController) {
+fun HomeButton(navController: NavController, gameViewModel: GameViewModel) {
 
     IconButton(
-        onClick = {navController.navigate("start_menu")}
+        onClick = {
+            navController.navigate("start_menu")
+            gameViewModel.toggleMenu()
+        }
     ) {
         Icon(
             imageVector = Icons.Default.Home,

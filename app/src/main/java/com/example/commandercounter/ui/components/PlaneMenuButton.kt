@@ -12,7 +12,10 @@ import com.example.commandercounter.viewmodels.GameViewModel
 @Composable
 fun PlaneMenuButton(gameViewModel: GameViewModel) {
     IconButton(
-        onClick = {gameViewModel.togglePlaneChase()}
+        onClick = {
+            gameViewModel.togglePlaneChase()
+            gameViewModel.toggleMenu()
+        }
     ) {
         Icon(
             painter = painterResource(id = R.drawable.planechase),

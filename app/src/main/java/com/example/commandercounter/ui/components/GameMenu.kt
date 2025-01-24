@@ -37,7 +37,7 @@ fun GameMenu(navController: NavController, gameViewModel: GameViewModel) {
                     onClickAction = { gameViewModel.toggleMenu() }
                 )
                 PlaneMenuButton(gameViewModel)
-                HomeButton(navController)
+                HomeButton(navController, gameViewModel)
             }
         }
 
